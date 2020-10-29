@@ -1,0 +1,35 @@
+{
+  "name": "obj.gl",
+  "version": "0.0.0",
+  "description": "A lightweight 2D WebGL library that creates isolated objects.",
+  "readme": "README.md",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "prepublishOnly": "tsc",
+    "postpublish": "rm -r index.js index.d.ts src/**.js src/**.d.ts"
+  },
+  "keywords": [
+    "webgl",
+    "webgl2",
+    "web",
+    "gl"
+  ],
+  "author": "Noah Friedman",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "gl-matrix": "^3.3.0",
+    "twgl.js": "^4.16.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.1",
+    "@types/jest": "^26.0.15",
+    "babel-jest": "^26.6.1",
+    "jest": "^26.6.1",
+    "typedoc": "^0.19.2",
+    "typescript": "^4.0.5"
+  }
+}
