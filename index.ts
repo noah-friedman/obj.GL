@@ -20,3 +20,5 @@ export function getGLInfo(canvas: HTMLCanvasElement, vertexShader: string, fragm
   const programInfo = createProgramInfo(gl, [vertexShader, fragmentShader]);
   return {gl, programInfo};
 }
+
+export * from "./src/DrawObject";
