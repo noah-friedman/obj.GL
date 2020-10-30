@@ -31,7 +31,7 @@ jobs:
         with:
           token: ${{ secrets.NPM_TOKEN }}
       - name: Build TypeDoc
-        if: steps.publish.outputs.type != 'none'
+        if: "steps.publish.outputs.type != 'none' || contains(github.event.head_commit.message, '[force typedoc]')"
         run: npx typedoc --mode file --theme minimal
       - name: Deploy TypeDoc to GitHub Pages
         if: steps.publish.outputs.type != 'none'
