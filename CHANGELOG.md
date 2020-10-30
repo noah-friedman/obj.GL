@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### 0.0.3
+- Remove unnecessary `postpublish` script
+- Change SemVer to force CI to deploy TypeDoc
+
 ### 0.0.2
 - NPM failed to publish 0.0.1 because it `could not overwrite previously published version`, SemVer changed to fix error
 
