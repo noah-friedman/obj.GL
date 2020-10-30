@@ -1,6 +1,6 @@
 {
   "name": "obj.gl",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A lightweight 2D WebGL library that creates isolated objects.",
   "readme": "README.md",
   "repository": {
