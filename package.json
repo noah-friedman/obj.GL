@@ -1,15 +1,15 @@
 {
   "name": "obj.gl",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A lightweight 2D WebGL library that creates isolated objects.",
   "readme": "README.md",
   "repository": {
     "type": "git",
-    "url": "git://github.com/noah-friedman/obj.gl"
+    "url": "git://github.com/noah-friedman/obj.GL"
   },
   "main": "index.js",
   "scripts": {
-    "test": "jest --passWithNoTests",
+    "test": "jest",
     "prepublishOnly": "tsc",
     "postpublish": "rm -r index.js index.d.ts src/**.js src/**.d.ts"
   },
