@@ -1,6 +1,11 @@
 name: "CodeQL"
 
-on: "push"
+on:
+  push:
+    tags-ignore:
+      - "**"
+    branches:
+      - master
 
 jobs:
   analyze:
