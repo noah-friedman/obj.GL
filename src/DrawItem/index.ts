@@ -8,8 +8,8 @@ import {
   setUniforms, drawBufferInfo
 } from "twgl.js";
 
-export type Buffers = {[id: string]: number[][]};
-export type Uniforms = {[id: string]: any};
+export interface Buffers {[id: string]: number[][]}
+export interface Uniforms {[id: string]: any}
 
 /**
  * An isolated item to draw onto a canvas element.
