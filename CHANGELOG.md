@@ -1,5 +1,8 @@
 # CHANGELOG
 
+### 0.0.4
+- Change [Buffers](https://github.com/noah-friedman/obj.GL/blob/v0.0.4/src/DrawItem/index.ts#L11) and [Uniforms](https://github.com/noah-friedman/obj.GL/blob/v0.0.4/src/DrawItem/index.ts#L12) from type aliases to interfaces.
+
 ### 0.0.3
 - Remove unnecessary `postpublish` script
 - Change SemVer to force CI to deploy TypeDoc

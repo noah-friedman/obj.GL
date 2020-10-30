@@ -3,3 +3,5 @@
 A lightweight 2D WebGL library that creates isolated objects.
 
 Built using [twgl](https://twgljs.org) and [glMatrix](https://glmatrix.net).
+
+Documentation can be found **[here](https://objgl.noahfriedman.ca/)**.
