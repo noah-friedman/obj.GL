@@ -1,5 +1,7 @@
 # CHANGELOG
 
+### 0.1.0
+
 ### 0.0.6
 - Add [.npmignore](https://github.com/noah-friedman/obj.GL/blob/v0.0.6/.npmignore)
 - Reconfigure file structure in published package
