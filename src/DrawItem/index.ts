@@ -138,6 +138,7 @@ export class DrawItem {
     }
 
     resizeCanvasToDisplaySize(this._glInfo.gl.canvas as HTMLCanvasElement, window.devicePixelRatio);
+    this._glInfo.gl.viewport(0, 0, this._glInfo.gl.canvas.width, this._glInfo.gl.canvas.height);
 
     if (!buffersEmpty) setBuffersAndAttributes(this._glInfo.gl, this._glInfo.programInfo, this.bufferInfo);
     if (!uniformsEmpty) setUniforms(this._glInfo.programInfo, this.uniforms);

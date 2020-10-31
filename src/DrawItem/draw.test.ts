@@ -13,7 +13,7 @@ jest.mock("twgl.js");
 describe("the draw method", () => {
   let drawItem: DrawItem;
   beforeEach(() => {
-    drawItem = new DrawItem({gl: {canvas: {} as HTMLCanvasElement}} as GLInfo);
+    drawItem = new DrawItem({gl: {canvas: {} as HTMLCanvasElement, viewport: jest.fn()}} as unknown as GLInfo);
   });
 
   it("should log a warning when called without draw data", () => {
