@@ -10,7 +10,7 @@ export interface GLInfo {
  * @param canvas The canvas to get the WebGL context from.
  * @param vertexShader The source for the vertex shader to be used in the WebGL program.
  * @param fragmentShader The source for the fragment shader to be used in the WebGL program.
- * @param webGl2Required Specify if WebGL2 is required for this program. If a WebGL1 context is received a {@link TypeError} will be thrown.
+ * @param webGl2Required Specify if WebGL2 is required for this program. If a WebGL1 context is received a TypeError will be thrown.
  */
 export function getGLInfo(canvas: HTMLCanvasElement, vertexShader: string, fragmentShader: string, webGl2Required?: boolean): GLInfo {
   const gl = getContext(canvas);
