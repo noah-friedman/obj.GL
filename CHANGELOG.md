@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### 0.0.5
+- Update configuration files
+- Move published files to `dist` directory
+
 ### 0.0.4
 - Change [Buffers](https://github.com/noah-friedman/obj.GL/blob/v0.0.4/src/DrawItem/index.ts#L11) and [Uniforms](https://github.com/noah-friedman/obj.GL/blob/v0.0.4/src/DrawItem/index.ts#L12) from type aliases to interfaces.
 
