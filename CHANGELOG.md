@@ -1,5 +1,10 @@
 # CHANGELOG
 
+### 0.0.6
+- Add [.npmignore](https://github.com/noah-friedman/obj.GL/blob/v0.0.6/.npmignore)
+- Reconfigure file structure in published package
+- Add call to `gl.viewport` in [DrawItem.draw()](https://github.com/noah-friedman/obj.GL/blob/v0.0.6/src/DrawItem/index.ts#L141) so that canvas resizing actually works properly
+
 ### 0.0.5
 - Update configuration files
 - Move published files to `dist` directory

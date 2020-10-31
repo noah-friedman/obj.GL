@@ -9,10 +9,10 @@
     "lib": [
       "ES2019",
       "dom"
-    ],
-    "outDir": "dist"
+    ]
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "**/*.test.*"
   ]
 }

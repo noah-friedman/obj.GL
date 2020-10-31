@@ -1,0 +1,12 @@
+.gitignore
+.npmignore
+
+.idea
+node_modules
+.github
+
+.babelrc
+jest.config.js
+
+**/*.ts
+!**/*.d.ts
