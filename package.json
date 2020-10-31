@@ -2,24 +2,26 @@
   "name": "obj.gl",
   "version": "0.0.4",
   "description": "A lightweight 2D WebGL library that creates isolated objects.",
+  "author": "Noah Friedman",
   "readme": "README.md",
+  "homepage": "https://objgl.noahfriedman.ca",
   "repository": {
     "type": "git",
     "url": "git://github.com/noah-friedman/obj.GL"
   },
-  "main": "index.js",
-  "scripts": {
-    "test": "jest",
-    "prepublishOnly": "tsc"
-  },
+  "license": "MPL-2.0",
   "keywords": [
     "webgl",
     "webgl2",
     "web",
     "gl"
   ],
-  "author": "Noah Friedman",
-  "license": "MPL-2.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest",
+    "prepublishOnly": "tsc"
+  },
   "dependencies": {
     "gl-matrix": "^3.3.0",
     "twgl.js": "^4.16.1"

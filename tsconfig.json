@@ -1,15 +1,16 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es6",
+    "target": "ES2019",
     "strict": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "lib": [
-      "esnext",
+      "ES2019",
       "dom"
-    ]
+    ],
+    "outDir": "dist"
   },
   "exclude": [
     "node_modules"
