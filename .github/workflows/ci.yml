@@ -4,7 +4,7 @@ on:
     tags-ignore:
       - "**"
     branches:
-      - master
+      - "**"
 
 jobs:
   ci:
@@ -26,12 +26,13 @@ jobs:
       - name: Run tests
         run: npm test
       - name: Publish to NPM
+        if: endsWith(github.ref, 'master')
         id: publish
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
       - name: Build TypeDoc
-        if: "steps.publish.outputs.type != 'none' || contains(github.event.head_commit.message, '[force typedoc]')"
+        if: "(steps.publish.outputs.type != 'none' || contains(github.event.head_commit.message, '[force typedoc]')) && endsWith(github.ref, 'master')"
         run: npx typedoc --mode file --theme minimal --excludePrivate --exclude "**/*.test.ts"
       - name: Deploy TypeDoc to GitHub Pages
         if: steps.publish.outputs.type != 'none'
