@@ -1,0 +1,7 @@
+{
+  "exclude": ["**/*.test.ts"],
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "mode": "file",
+  "theme": "minimal"
+}
