@@ -128,7 +128,7 @@ export class DrawItem {
   /**
    * Draw using the stored data.
    */
-  draw(): void {
+  draw(mode?: GLenum): void {
     const buffersEmpty = this.bufferInfo.numElements === 0;
     const uniformsEmpty = JSON.stringify(this.uniforms) === "{}";
 
@@ -143,7 +143,7 @@ export class DrawItem {
     if (!buffersEmpty) setBuffersAndAttributes(this._glInfo.gl, this._glInfo.programInfo, this.bufferInfo);
     if (!uniformsEmpty) setUniforms(this._glInfo.programInfo, this.uniforms);
 
-    drawBufferInfo(this._glInfo.gl, this.bufferInfo);
+    drawBufferInfo(this._glInfo.gl, this.bufferInfo, mode);
   }
 
   /**
