@@ -2,6 +2,7 @@
 
 ### 0.1.0
 - Add option to choose draw mode in [DrawItem.draw()](https://github.com/noah-friedman/obj.GL/blob/v0.1.0/src/DrawItem/index.ts#L131)
+- Add [Shape](https://github.com/noah-friedman/obj.GL/blob/v0.1.0/src/Shape.ts) class
 
 ### 0.0.6
 - Add [.npmignore](https://github.com/noah-friedman/obj.GL/blob/v0.0.6/.npmignore)

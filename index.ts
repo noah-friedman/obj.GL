@@ -23,3 +23,4 @@ export function getGLInfo(canvas: HTMLCanvasElement, vertexShader: string, fragm
 }
 
 export * from "./src/DrawItem";
+export * from "./src/Shape";

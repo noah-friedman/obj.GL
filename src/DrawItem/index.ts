@@ -19,7 +19,7 @@ export class DrawItem {
    * GLInfo to be used when drawing.
    * @private
    */
-  private _glInfo: GLInfo;
+  protected _glInfo: GLInfo;
   /**
    * Update the WebGL context used.
    * @param context The new context to use.
