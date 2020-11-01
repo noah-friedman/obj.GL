@@ -54,7 +54,7 @@ export class DrawItem {
    * @see {@link setBufferArray} - set/replace data instead of appending data.
    * @throws ReferenceError, TypeError
    */
-  addBufferArray(id: string, data: number[][]): void {
+  addDataToBufferArray(id: string, data: number[][]): void {
     if (!this.bufferInfo.attribs?.[id]) throw ReferenceError(`No buffer array with id "${id}"`);
 
     const numComponents = this.bufferInfo.attribs[id].numComponents;
@@ -73,7 +73,8 @@ export class DrawItem {
    * Set/replace the data in a buffer.
    * @param id - The ID of the array to set.
    * @param data - The data to set in the array.
-   * @see {@link addBufferArray} - append data instead of setting/replacing data.
+   * @see {@link addDataToBufferArray} - append data instead of setting/replacing data.
+   * @throws TypeError
    */
   setBufferArray(id: string, data: number[][]): void {
     DrawItem.checkBufferArray(data);
@@ -167,7 +168,7 @@ export class DrawItem {
    * @param length The length arrays should be. If omitted, checks against {@code bufferArray[0].length}.
    * @throws TypeError
    */
-  private static checkBufferArray(data: number[][], length?: number): void {
+  protected static checkBufferArray(data: number[][], length?: number): void {
     if (!data.every((v, _, a) => v.length === (length || a[0].length))) {
       throw TypeError("Buffer array must contain arrays that are all the same length");
     }
