@@ -17,9 +17,9 @@ export interface Uniforms {[id: string]: any}
 export class DrawItem {
   /**
    * GLInfo to be used when drawing.
-   * @private
+   * @protected
    */
-  private _glInfo: GLInfo;
+  protected _glInfo: GLInfo;
   /**
    * Update the WebGL context used.
    * @param context The new context to use.
@@ -54,7 +54,7 @@ export class DrawItem {
    * @see {@link setBufferArray} - set/replace data instead of appending data.
    * @throws ReferenceError, TypeError
    */
-  addBufferArray(id: string, data: number[][]): void {
+  addDataToBufferArray(id: string, data: number[][]): void {
     if (!this.bufferInfo.attribs?.[id]) throw ReferenceError(`No buffer array with id "${id}"`);
 
     const numComponents = this.bufferInfo.attribs[id].numComponents;
@@ -73,7 +73,8 @@ export class DrawItem {
    * Set/replace the data in a buffer.
    * @param id - The ID of the array to set.
    * @param data - The data to set in the array.
-   * @see {@link addBufferArray} - append data instead of setting/replacing data.
+   * @see {@link addDataToBufferArray} - append data instead of setting/replacing data.
+   * @throws TypeError
    */
   setBufferArray(id: string, data: number[][]): void {
     DrawItem.checkBufferArray(data);
@@ -109,7 +110,7 @@ export class DrawItem {
    * Replace the entire {@link uniforms} object.
    * @param uniforms The new uniforms. Leave blank to set uniforms to empty.
    */
-  setUniforms(uniforms?: Uniforms) {
+  setUniforms(uniforms?: Uniforms): void {
     this.uniforms = uniforms || {};
   }
 
@@ -128,7 +129,7 @@ export class DrawItem {
   /**
    * Draw using the stored data.
    */
-  draw(): void {
+  draw(mode?: GLenum): void {
     const buffersEmpty = this.bufferInfo.numElements === 0;
     const uniformsEmpty = JSON.stringify(this.uniforms) === "{}";
 
@@ -143,7 +144,7 @@ export class DrawItem {
     if (!buffersEmpty) setBuffersAndAttributes(this._glInfo.gl, this._glInfo.programInfo, this.bufferInfo);
     if (!uniformsEmpty) setUniforms(this._glInfo.programInfo, this.uniforms);
 
-    drawBufferInfo(this._glInfo.gl, this.bufferInfo);
+    drawBufferInfo(this._glInfo.gl, this.bufferInfo, mode);
   }
 
   /**
@@ -164,10 +165,11 @@ export class DrawItem {
   /**
    * Static sub-method of {@link checkBuffers} that can also be used on it's own. Runs asynchronously so that it doesn't block the main thread.
    * @param data The array to validate.
-   * @param length The length arrays should be. If omitted, checks against {@code bufferArray[0].length}.
+   * @param length The length arrays should be. If omitted, checks against `bufferArray[0].length`.
    * @throws TypeError
+   * @protected
    */
-  private static checkBufferArray(data: number[][], length?: number): void {
+  protected static checkBufferArray(data: number[][], length?: number): void {
     if (!data.every((v, _, a) => v.length === (length || a[0].length))) {
       throw TypeError("Buffer array must contain arrays that are all the same length");
     }
