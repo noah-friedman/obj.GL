@@ -17,7 +17,7 @@ export interface Uniforms {[id: string]: any}
 export class DrawItem {
   /**
    * GLInfo to be used when drawing.
-   * @private
+   * @protected
    */
   protected _glInfo: GLInfo;
   /**
@@ -110,7 +110,7 @@ export class DrawItem {
    * Replace the entire {@link uniforms} object.
    * @param uniforms The new uniforms. Leave blank to set uniforms to empty.
    */
-  setUniforms(uniforms?: Uniforms) {
+  setUniforms(uniforms?: Uniforms): void {
     this.uniforms = uniforms || {};
   }
 
@@ -165,8 +165,9 @@ export class DrawItem {
   /**
    * Static sub-method of {@link checkBuffers} that can also be used on it's own. Runs asynchronously so that it doesn't block the main thread.
    * @param data The array to validate.
-   * @param length The length arrays should be. If omitted, checks against {@code bufferArray[0].length}.
+   * @param length The length arrays should be. If omitted, checks against `bufferArray[0].length`.
    * @throws TypeError
+   * @protected
    */
   protected static checkBufferArray(data: number[][], length?: number): void {
     if (!data.every((v, _, a) => v.length === (length || a[0].length))) {
